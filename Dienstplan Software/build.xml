@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project name="Ant-Test" default="main" basedir=".">
-  
-  <path id="classpath">  
-    <fileset dir="${lib.dir}" includes="*.jar"/>  
-  </path>
 	
   <!-- Sets variables which can later be used. -->
   <!-- The value of a property is accessed via ${} -->
@@ -12,13 +8,16 @@
   <property name="dist.dir" location="dist" />
   <property name="docs.dir" location="docs" />
   <property name="lib.dir" location="lib" />
+  
+  <path id="classpath">  
+    <fileset dir="${lib.dir}" includes="*.jar"/>  
+  </path>
 
   <!-- Deletes the existing build, docs and dist directory-->
   <target name="clean">
   	<delete dir="${build.dir}" />
     <delete dir="${docs.dir}" />
     <delete dir="${dist.dir}" />
-    <delete dir="${lib.dir}" />
   </target>
 
   <!-- Creates the  build, docs and dist directory-->
@@ -26,12 +25,12 @@
     <mkdir dir="${build.dir}" />
     <mkdir dir="${docs.dir}" />
     <mkdir dir="${dist.dir}" />
-    <mkdir dir="${lib.dir}" />
   </target>
 
   <!-- Compiles the java code (including the usage of library for JUnit -->
   <target name="compile" depends="clean, makedir">
     <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false" >
+    	<!-- <classpath refid="classpath" /> -->
     </javac>
   </target>
 
