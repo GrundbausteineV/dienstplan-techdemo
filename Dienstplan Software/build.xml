@@ -10,12 +10,8 @@
   <property name="lib.dir" location="lib" />
   
   <path id="classpath">  
-    <fileset dir="${lib.dir}" includes="*.jar"/>  
+    <fileset dir="${lib.dir}" includes="**.jar"/>  
   </path>
-	
-  <lib dir="${lib.dir}">
-    <include name="jfxrt.jar"/>
-  </lib> 
 
   <!-- Deletes the existing build, docs and dist directory-->
   <target name="clean">
@@ -55,6 +51,7 @@
       	<attribute name="Class-Path" value="${lib.dir}"/>
       	<attribute name="Main-Class" value="application.Main"/>
       </manifest>
+      <zipgroupfileset dir="${lib.dir}"/>
     </jar>
   </target>
 
