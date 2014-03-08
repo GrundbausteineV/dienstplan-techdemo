@@ -49,8 +49,8 @@
   <target name="jar" depends="compile">
     <jar destfile="${dist.dir}\Dienstplan.jar" basedir="${build.dir}">
       <manifest>
-        <attribute name="Main-Class" value="application.Main"/>
-        <attribute name="Class-Path" value="."/>
+      	<attribute name="Class-Path" value="${lib.dir}"/>
+      	<attribute name="Main-Class" value="application.Main"/>
       </manifest>
     </jar>
   </target>
