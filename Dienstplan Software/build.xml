@@ -12,6 +12,10 @@
   <path id="classpath">  
     <fileset dir="${lib.dir}" includes="*.jar"/>  
   </path>
+	
+  <lib dir="${lib.dir}">
+    <include name="jfxrt.jar"/>
+  </lib> 
 
   <!-- Deletes the existing build, docs and dist directory-->
   <target name="clean">
