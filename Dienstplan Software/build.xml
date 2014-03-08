@@ -30,7 +30,7 @@
   <!-- Compiles the java code (including the usage of library for JUnit -->
   <target name="compile" depends="clean, makedir">
     <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false" >
-    	<!-- <classpath refid="classpath" /> -->
+      <classpath refid="classpath" />
     </javac>
   </target>
 
@@ -51,7 +51,6 @@
       	<attribute name="Class-Path" value="${lib.dir}"/>
       	<attribute name="Main-Class" value="application.Main"/>
       </manifest>
-      <zipgroupfileset dir="${lib.dir}"/>
     </jar>
   </target>
 
