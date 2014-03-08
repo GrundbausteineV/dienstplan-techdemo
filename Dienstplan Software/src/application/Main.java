@@ -53,10 +53,10 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 		
-		personData.add("Jan-Eric Dreßler");
+		personData.add("Jan-Eric Dressler");
 	    personData.add("Katja Pommerening");
 	    personData.add("Enrico Winkler");
-	    personData.add("Till Grüning");
+	    personData.add("Till Gruening");
 	    personData.add("Max 'Der vom deutschen Personalausweis' Mustermann");
 	    FXCollections.sort(personData);
 		
