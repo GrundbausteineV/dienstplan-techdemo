@@ -42,14 +42,15 @@
             <classpath refid="libraries.path"/>
         </manifestclasspath>
 
-        <jar destfile="${jar.file}" basedir="${class.dir}">
-            <manifest>
-                <attribute name="Main-Class" value="${main-class}"/>
-                <attribute name="Class-Path" value="${manifest.classpath}"/>
-            	<attribute name="Built-By" value="${user.name}"/>
-                <attribute name="Implementation-Version" value="${version.num}-b${build.number}"/>
-            	<attribute name="Built-Date" value="${TODAY}"/>
-            </manifest>
+        <manifest file="MANIFEST.MF">
+          <attribute name="Main-Class" value="${main-class}"/>
+          <attribute name="Class-Path" value="${manifest.classpath}"/>
+          <attribute name="Built-By" value="${user.name}"/>
+          <attribute name="Implementation-Version" value="${version.num}-b${build.number}"/>
+          <attribute name="Built-Date" value="${TODAY}"/>
+        </manifest>
+    	
+        <jar destfile="${jar.file}" basedir="${class.dir}" manifest="MANIFEST.MF">
         </jar>  
     </target>
 
