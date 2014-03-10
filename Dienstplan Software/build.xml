@@ -45,7 +45,7 @@
   	  <attribute name="Class-Path" value="${mf.classpath}" />
   	</manifest>
   	
-  	<jar basedir="${build.dir}" includes="**/*.*" excludes="**/*Test*" manifest="MANIFEST.MF" />
+  	<jar basedir="${build.dir}" destfile="${dist.dir}" includes="**/*.*" excludes="**/*Test*" manifest="MANIFEST.MF" />
   	
   	<!-- <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false" >
       <classpath refid="classpath" />
