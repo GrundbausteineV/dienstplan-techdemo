@@ -50,7 +50,7 @@
           <attribute name="Built-Date" value="${TODAY}"/>
         </manifest>
     	
-        <jar destfile="${jar.file}" basedir="${class.dir}" includes="**/*.*" manifest="MANIFEST.MF">
+        <jar destfile="${jar.file}" basedir="${class.dir}" includes="**/*.class" manifest="MANIFEST.MF">
         </jar>  
     </target>
 
