@@ -34,8 +34,6 @@
   	<javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false" >
       <classpath refid="build.classpath" />
     </javac>
-  	
-  	<jar basedir="${build.dir}" destfile="${build.dir}/Dienstplan.jar" includes="**/*.*" excludes="**/*Test*" manifest="MANIFEST.MF" />
   </target>
 
   <!-- Creates Javadoc -->
@@ -55,7 +53,7 @@
   	  <flattenmapper />
   	</pathconvert>
   	
-    <jar destfile="${dist.dir}\Dienstplan.jar" basedir="${build.dir}">
+    <jar destfile="${dist.dir}/Dienstplan.jar" basedir="${build.dir}" includes="**/*.*">
       <manifest>
       	<attribute name="Main-Class" value="application.Main"/>
       	<attribute name="Class-Path" value="${mf.classpath}"/>
