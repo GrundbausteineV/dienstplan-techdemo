@@ -25,7 +25,13 @@
         </javac>
     </target>
 
-    <target name="jar" depends="compile">
+    <target name="jar" depends="compile">    	
+    	<property name="version.num" value="0.01"/>
+    	<buildnumber file="build.num"/>
+    	<tstamp>
+    	  <format property="TODAY" pattern="dd.MM.yyyy HH:mm:ss" />
+    	</tstamp>
+    	
         <mkdir dir="${jar.dir}"/>
         <mkdir dir="${class.dir}/${lib.dir}"/>
         <copy todir="${class.dir}/${lib.dir}" flatten="true">
@@ -40,6 +46,9 @@
             <manifest>
                 <attribute name="Main-Class" value="${main-class}"/>
                 <attribute name="Class-Path" value="${manifest.classpath}"/>
+            	<attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Implementation-Version" value="${version.num}-b${build.number}"/>
+            	<attribute name="Built-Date" value="${TODAY}"/>
             </manifest>
         </jar>  
     </target>
