@@ -7,7 +7,7 @@
     <property name="jar.file"        value="${jar.dir}/${ant.project.name}.jar"/>
     <property name="main-class"     value="application.Main"/>
 
-    <path id="libraries.path">    
+    <path id="libraries.path">
         <fileset dir="${lib.dir}">
             <include name="*.jar"/>
         </fileset>
@@ -53,9 +53,5 @@
         <jar destfile="${jar.file}" basedir="${class.dir}" includes="**/*.*" manifest="MANIFEST.MF">
         </jar>  
     </target>
-
-	<target name="main" depends="compile, jar, clean">
-	  <description>Main target</description>
-	</target>
 
 </project>
