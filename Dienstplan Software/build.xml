@@ -45,11 +45,11 @@
   	  <attribute name="Class-Path" value="${mf.classpath}" />
   	</manifest>
   	
-  	<jar basedir="${build.dir}" destdir="${build.dir}" includes="**/*.*" excludes="**/*Test*" manifest="MANIFEST.MF" />
+  	<javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false" >
+      <classpath refid="build.classpath" />
+    </javac>
   	
-  	<!-- <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false" >
-      <classpath refid="classpath" />
-    </javac> -->
+  	<jar basedir="${build.dir}" destfile="${build.dir}/Dienstplan.jar" includes="**/*.*" excludes="**/*Test*" manifest="MANIFEST.MF" />
   </target>
 
   <!-- Creates Javadoc -->
