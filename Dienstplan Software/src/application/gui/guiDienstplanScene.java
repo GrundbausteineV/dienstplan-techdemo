@@ -29,6 +29,7 @@ public class guiDienstplanScene {
 	        // Give the controller access to the main app
 		    MainDienstplanController controller = loader.getController();
 		    controller.setMainApp(app);
+		    
 	        //root.setCenter(contentPage);
 			
 			//mainScene = new Scene(root,1024,768);

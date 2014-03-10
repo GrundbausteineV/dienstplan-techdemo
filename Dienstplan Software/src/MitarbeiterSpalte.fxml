@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="120.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <VBox alignment="CENTER" prefHeight="80.0" prefWidth="120.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <Label alignment="CENTER_LEFT" contentDisplay="LEFT" prefHeight="40.0" text="Mitarbeiter" />
+        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" style="-fx-border-color:black;">
+          <children>
+            <Label text="SPF">
+              <HBox.margin>
+                <Insets left="5.0" right="5.0" fx:id="x1" />
+              </HBox.margin>
+            </Label>
+            <Label text="40" HBox.margin="$x1" />
+            <ChoiceBox minWidth="23.0" prefWidth="23.0" HBox.margin="$x1">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Item 1" />
+                  <String fx:value="Item 2" />
+                  <String fx:value="Item 3" />
+                </FXCollections>
+              </items>
+            </ChoiceBox>
+          </children>
+        </HBox>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

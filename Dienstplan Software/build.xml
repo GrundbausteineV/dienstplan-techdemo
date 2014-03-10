@@ -9,8 +9,10 @@
   <property name="docs.dir" location="docs" />
   <property name="lib.dir" location="lib" />
   
-  <path id="classpath">  
-    <fileset dir="${lib.dir}" includes="**.jar"/>  
+  <path id="build.classpath">
+    <fileset dir="lib">
+	  <include name="**/*.jar" />
+	</fileset>
   </path>
 
   <!-- Deletes the existing build, docs and dist directory-->
@@ -29,9 +31,25 @@
 
   <!-- Compiles the java code (including the usage of library for JUnit -->
   <target name="compile" depends="clean, makedir">
-    <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false" >
+  	<pathconvert property="mf.classpath" pathsep=" ">
+  	  <path refid="build.classpath" />
+  	  <flattenmapper />
+  	</pathconvert>
+  	
+  	<manifest file="MANIFEST.MF">
+  	  <attribute name="Built-By" value="${manifest.built.by}"/>
+  	  <attribute name="Created-By" value="${manifest.created.by}"/>
+  	  <attribute name="Main-Class" value="${manifest.main.class}"/>
+  	  <attribute name="Implementation-Version" value="${version.number}-b${build.number}"/>   
+  	  <attribute name="Built-Date" value="${TODAY}"/>
+  	  <attribute name="Class-Path" value="${mf.classpath}" />
+  	</manifest>
+  	
+  	<jar basedir="${dest.dir.classes}" destfile="${package.file}" includes="**/*.*" excludes="**/*Test*" manifest="MANIFEST.MF" />
+  	
+  	<!-- <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false" >
       <classpath refid="classpath" />
-    </javac>
+    </javac> -->
   </target>
 
   <!-- Creates Javadoc -->
