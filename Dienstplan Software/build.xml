@@ -54,4 +54,8 @@
         </jar>  
     </target>
 
+	<target name="main" depends="compile, jar, clean">
+	  <description>Main target</description>
+	</target>
+
 </project>
