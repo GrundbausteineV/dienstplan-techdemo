@@ -50,12 +50,8 @@
           <attribute name="Built-Date" value="${TODAY}"/>
         </manifest>
     	
-        <jar destfile="${jar.file}" basedir="${class.dir}" manifest="MANIFEST.MF">
+        <jar destfile="${jar.file}" basedir="${class.dir}" includes="**/*.*" manifest="MANIFEST.MF">
         </jar>  
-    </target>
-
-    <target name="run" depends="jar">
-        <java jar="${jar.dir}/${ant.project.name}.jar" fork="true"/>
     </target>
 
 </project>
